@@ -84,6 +84,11 @@ runs:
     - ${{ inputs.SAVE_RESULTS_IN_LACEWORK }}
     - ${{ inputs.SAVE_BUILD_REPORT }}
     - ${{ inputs.BUILD_REPORT_FILE_NAME }}
+    - ${{ inputs.FAIL_ON_VIOLATION_EXIT_CODE }}
+    - ${{ inputs.CRITICAL_VIOLATION_EXIT_CODE }}
+    - ${{ inputs.HIGH_VIOLATION_EXIT_CODE }}
+    - ${{ inputs.LOW_VIOLATION_EXIT_CODE }}
+    - ${{ inputs.INFO_VIOLATION_EXIT_CODE }}
     - ${{ inputs.DEBUGGING }}
     - ${{ inputs.PRETTY_OUTPUT }}
     - ${{ inputs.SIMPLE_OUTPUT }}

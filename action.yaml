@@ -29,6 +29,30 @@ inputs:
   BUILD_REPORT_FILE_NAME:
     description: "Specify custom file name for the HTML evalutation report, by default the name is OS_TYPE-IMAGE_DIGEST_SHA256.html."
     required: false
+  FAIL_ON_VIOLATION_EXIT_CODE:
+    description: "Default exit code for a policy violation when Action on failure is set to Block. Can be overwritten for specific priorities. More details: https://docs.lacework.net/onboarding/integrate-inline-scanner#exit-codes-for-policy-violations"
+    required: true
+    default: "1"
+  CRITICAL_VIOLATION_EXIT_CODE:
+    description: "Exit code for critical severity policy violation."
+    required: true
+    default: "-1"
+  HIGH_VIOLATION_EXIT_CODE:
+    description: "Exit code for high severity policy violation."
+    required: true
+    default: "-1"
+  MEDIUM_VIOLATION_EXIT_CODE:
+    description: "Exit code for medium severity policy violation."
+    required: true
+    default: "-1"
+  LOW_VIOLATION_EXIT_CODE:
+    description: "Exit code for low severity policy violation."
+    required: true
+    default: "-1"
+  INFO_VIOLATION_EXIT_CODE:
+    description: "Exit code for info severity policy violation."
+    required: true
+    default: "-1"
   DEBUGGING:
     description: "Enable debug logging for scanner"
     required: false

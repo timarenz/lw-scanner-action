@@ -41,4 +41,7 @@ rm ${GITHUB_WORKSPACE}/evaluations/${INPUT_IMAGE_NAME}/${INPUT_IMAGE_TAG}/evalua
 
 # Run scanner
 /opt/lacework/lw-scanner image evaluate ${INPUT_IMAGE_NAME} ${INPUT_IMAGE_TAG} --build-plan ${GITHUB_REPOSITORY} \
-  --build-id ${GITHUB_RUN_ID} --data-directory ${GITHUB_WORKSPACE}  --policy --fail-on-violation-exit-code 1 ${SCANNER_PARAMETERS}
+  --build-id ${GITHUB_RUN_ID} --data-directory ${GITHUB_WORKSPACE}  --policy --fail-on-violation-exit-code ${INPUT_FAIL_ON_VIOLATION_EXIT_CODE} \
+  --critical-violation-exit-code ${INPUT_CRITICAL_VIOLATION_EXIT_CODE} --high-violation-exit-code ${INPUT_HIGH_VIOLATION_EXIT_CODE} \
+  --medium-violation-exit-code ${INPUT_MEDIUM_VIOLATION_EXIT_CODE} --low-violation-exit-code ${INPUT_LOW_VIOLATION_EXIT_CODE} \
+  --info-violation-exit-code ${INPUT_INFO_VIOLATION_EXIT_CODE} ${SCANNER_PARAMETERS}
